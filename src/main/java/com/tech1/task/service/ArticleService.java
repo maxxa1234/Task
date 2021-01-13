@@ -10,5 +10,6 @@ import java.util.List;
 public interface ArticleService {
 
     List<UserArticleByColorDto> getUsersAndArticlesByColor(ArticleColor color);
+
     void saveArticle(ArticleForm articleForm, Long id) throws UserNotFoundException;
 }

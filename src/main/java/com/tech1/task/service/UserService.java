@@ -11,8 +11,12 @@ import java.util.List;
 public interface UserService {
 
     User getUserById(Long id) throws UserNotFoundException;
+
     List<UserDto> getUsersWhereAgeIsGrater(int age);
+
     UserNamesDto getUsersWithArticles();
+
     void saveUser(UserForm userForm);
+
     User getUserByLogin(String login) throws UserNotFoundException;
 }

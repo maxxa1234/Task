@@ -25,7 +25,7 @@ public class ArticleServiceImpl implements ArticleService {
     @Autowired
     public ArticleServiceImpl(ArticleDao articleDao, UserService userService, ModelMapper modelMapper) {
         this.articleDao = articleDao;
-        this.userService =userService;
+        this.userService = userService;
         this.modelMapper = modelMapper;
     }
 
@@ -43,6 +43,6 @@ public class ArticleServiceImpl implements ArticleService {
     public void saveArticle(ArticleForm articleForm, Long id) throws UserNotFoundException {
         Article article = modelMapper.map(articleForm, Article.class);
         article.setUser(userService.getUserById(id));
-         articleDao.save(article);
+        articleDao.save(article);
     }
 }

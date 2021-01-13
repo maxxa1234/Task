@@ -1,8 +1,7 @@
 package com.tech1.task.annotation;
 
 
-import com.tech1.task.enums.ArticleColor;
-import com.tech1.task.annotation.validation.ArticleColorSubSetValidator;
+import com.tech1.task.annotation.validator.ValueOfEnumValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -16,10 +15,13 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE})
 @Retention(RUNTIME)
 @Documented
-@Constraint(validatedBy = ArticleColorSubSetValidator.class)
-public @interface ArticleColorSubset {
-    ArticleColor[] anyOf();
-    String message() default "must be any of {anyOf}";
+@Constraint(validatedBy = ValueOfEnumValidator.class)
+public @interface ValueOfEnum {
+    Class<? extends Enum<?>> enumClass();
+
+    String message() default "Incorrect value";
+
     Class<?>[] groups() default {};
+
     Class<? extends Payload>[] payload() default {};
 }

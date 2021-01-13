@@ -1,7 +1,5 @@
 package com.tech1.task.form;
 
-import org.hibernate.validator.constraints.UniqueElements;
-
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 

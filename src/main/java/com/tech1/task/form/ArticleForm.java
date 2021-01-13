@@ -1,8 +1,7 @@
 package com.tech1.task.form;
 
-import com.tech1.task.annotation.ArticleColorSubset;
+import com.tech1.task.annotation.ValueOfEnum;
 import com.tech1.task.enums.ArticleColor;
-import com.tech1.task.entity.User;
 
 import javax.validation.constraints.NotEmpty;
 
@@ -11,10 +10,8 @@ public class ArticleForm {
     @NotEmpty
     private String text;
 
-//    @ArticleColorSubset(anyOf = {ArticleColor.BLUE, ArticleColor.RED, ArticleColor.YELLOW})
-    private ArticleColor color;
-
-    private User user;
+    @ValueOfEnum(enumClass = ArticleColor.class)
+    private String color;
 
     public String getText() {
         return text;
@@ -24,19 +21,12 @@ public class ArticleForm {
         this.text = text;
     }
 
-    public ArticleColor getColor() {
+    public String getColor() {
         return color;
     }
 
-    public void setColor(ArticleColor color) {
+    public void setColor(String color) {
         this.color = color;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 }
