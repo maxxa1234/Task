@@ -7,6 +7,7 @@ import com.tech1.task.dto.UserNamesDto;
 import com.tech1.task.entity.User;
 import com.tech1.task.exception.UserNotFoundException;
 import com.tech1.task.form.UserForm;
+import com.tech1.task.service.TokenService;
 import com.tech1.task.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,6 +52,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void saveUser(UserForm userForm) {
-        userDao.save(modelMapper.map(userForm, User.class));
+        User user = modelMapper.map(userForm, User.class);
+        userDao.save(user);
+    }
+
+    @Override
+    public User getUserByLogin(String login) throws UserNotFoundException {
+        if (userDao.findByLogin(login).isPresent()) {
+            return userDao.findByLogin(login).get();
+        }
+        throw new UserNotFoundException();
     }
 }
+

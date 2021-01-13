@@ -1,6 +1,6 @@
 package com.tech1.task.dto;
 
-import com.tech1.task.entity.ArticleColor;
+import com.tech1.task.enums.ArticleColor;
 
 public class UserArticleByColorDto {
 

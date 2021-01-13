@@ -12,14 +12,17 @@ public class User {
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
 
+    @Column(name = "login")
+    private String login;
+
+    @Column(name = "password")
+    private String password;
+
     @Column(name = "name")
     private String name;
 
     @Column(name = "age")
     private Integer age;
-
-//    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
-//    private List<Article> articles;
 
     public User() {
     }
@@ -48,11 +51,19 @@ public class User {
         this.age = age;
     }
 
-//    public List<Article> getArticles() {
-//        return articles;
-//    }
-//
-//    public void setArticles(List<Article> articles) {
-//        this.articles = articles;
-//    }
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

@@ -1,7 +1,7 @@
 package com.tech1.task.form;
 
 import com.tech1.task.annotation.ArticleColorSubset;
-import com.tech1.task.entity.ArticleColor;
+import com.tech1.task.enums.ArticleColor;
 import com.tech1.task.entity.User;
 
 import javax.validation.constraints.NotEmpty;
@@ -11,7 +11,7 @@ public class ArticleForm {
     @NotEmpty
     private String text;
 
-    @ArticleColorSubset(anyOf = {ArticleColor.BLUE, ArticleColor.RED, ArticleColor.YELLOW})
+//    @ArticleColorSubset(anyOf = {ArticleColor.BLUE, ArticleColor.RED, ArticleColor.YELLOW})
     private ArticleColor color;
 
     private User user;

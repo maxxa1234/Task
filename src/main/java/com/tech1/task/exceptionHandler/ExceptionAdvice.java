@@ -1,4 +1,4 @@
-package com.tech1.task.resource;
+package com.tech1.task.exceptionHandler;
 
 import com.tech1.task.exception.UserNotFoundException;
 import org.springframework.http.HttpStatus;
@@ -15,4 +15,6 @@ public class ExceptionAdvice {
     void handleException(UserNotFoundException e, HttpServletResponse response) throws IOException {
         response.sendError(HttpStatus.NOT_FOUND.value(), e.getMessage());
     }
+
+
 }

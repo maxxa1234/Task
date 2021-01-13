@@ -1,5 +1,7 @@
 package com.tech1.task.entity;
 
+import com.tech1.task.enums.ArticleColor;
+
 import javax.persistence.*;
 
 @Entity

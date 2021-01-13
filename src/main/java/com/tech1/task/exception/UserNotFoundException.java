@@ -4,8 +4,12 @@ public class UserNotFoundException extends Exception{
 
     private static final String DEFAULT_MESSAGE = "user not found";
 
+    public UserNotFoundException(String message) {
+        super(message);
+    }
+
     public UserNotFoundException() {
-        super(DEFAULT_MESSAGE);
+        this(DEFAULT_MESSAGE);
     }
 
 

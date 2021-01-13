@@ -3,6 +3,8 @@ DROP TABLE IF EXISTS articles;
 
 CREATE TABLE users(
                       id int NOT NULL AUTO_INCREMENT,
+                      login varchar (50) NOT NULL UNIQUE,
+                      password varchar(255) NOT NULL,
                       name varchar(50) NOT NULL,
                       age int NOT NULL,
                       PRIMARY KEY (id)
@@ -16,5 +18,6 @@ CREATE TABLE articles(
                          PRIMARY KEY (id),
                          FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE NO ACTION ON UPDATE NO ACTION
 );
+
 
 

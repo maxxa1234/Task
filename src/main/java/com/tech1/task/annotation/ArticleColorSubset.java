@@ -1,7 +1,7 @@
 package com.tech1.task.annotation;
 
 
-import com.tech1.task.entity.ArticleColor;
+import com.tech1.task.enums.ArticleColor;
 import com.tech1.task.annotation.validation.ArticleColorSubSetValidator;
 
 import javax.validation.Constraint;

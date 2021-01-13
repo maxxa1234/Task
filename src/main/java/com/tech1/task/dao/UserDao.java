@@ -15,6 +15,9 @@ public interface UserDao extends CrudRepository<User, Long> {
 
     List<User> findByAgeGreaterThan(int age);
 
+    Optional<User> findByName(String name);
+
+    Optional<User> findByLogin(String login);
 
     @Query(value = "select distinct a.user.name from Article a group by  a.user.id having count(a.user.id) > 3 ")
     List<String> getUserNames();
