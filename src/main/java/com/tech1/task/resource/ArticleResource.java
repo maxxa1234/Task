@@ -18,9 +18,8 @@ public class ArticleResource {
 
     private ArticleService articleService;
 
-
     @Autowired
-    public ArticleResource(ArticleService articleService, UserService userService) {
+    public ArticleResource(ArticleService articleService) {
         this.articleService = articleService;
     }
 
