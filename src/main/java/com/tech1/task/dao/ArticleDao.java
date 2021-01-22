@@ -11,5 +11,4 @@ import java.util.List;
 public interface ArticleDao extends CrudRepository<Article, Long> {
 
     List<Article> findByColor(ArticleColor color);
-
 }

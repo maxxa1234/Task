@@ -5,7 +5,6 @@ import com.tech1.task.enums.ArticleColor;
 import com.tech1.task.exception.UserNotFoundException;
 import com.tech1.task.form.ArticleForm;
 import com.tech1.task.service.ArticleService;
-import com.tech1.task.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

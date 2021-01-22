@@ -65,7 +65,6 @@ public class ArticleServiceImplTest {
 
 
         when(articleDao.findByColor(color)).thenReturn(articleList);
-        List<UserArticleByColorDto> t = articleService.getUsersAndArticlesByColor(color);
 
 
         assertThat(articleService.getUsersAndArticlesByColor(color)).isEqualTo(dtoList);

@@ -29,7 +29,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ComponentScan(
         basePackageClasses = {
                 JWTFilter.class
-                })
+        })
 public class ArticleResourceTest {
 
 
@@ -60,5 +60,13 @@ public class ArticleResourceTest {
                 .header("Authorization", token)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
+
+    }
+
+    @Test
+    public void unauthRequest() throws Exception {
+        mvc.perform(get("/article?color=RED")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isUnauthorized());
     }
 }
